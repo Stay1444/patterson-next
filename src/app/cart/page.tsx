@@ -1,9 +1,10 @@
+"use client"
 import { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
-import CartItemComponent from "../components/CartItemComponent";
+import CartItemComponent from "../../components/CartItemComponent";
 
-import style from "./cart.module.sass"
+import style from "./page.module.sass"
 
 import { FiPlus, FiX } from "react-icons/fi"
 
@@ -22,7 +23,7 @@ const ValidDiscounts = [
     new DiscountCode("DTO50", 0.5)
 ]
 
-const CartPage = () => {
+export default function CartPage() {
     const cartContext = useContext(CartContext);
     
     const [discountCodes, setDiscountCodes] = useState<DiscountCode[]>([])
@@ -124,5 +125,3 @@ const CartPage = () => {
         </div>
     )
 }
-
-export default CartPage;

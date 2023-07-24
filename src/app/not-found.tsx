@@ -1,12 +1,11 @@
-import { useRouter } from "next/router";
+"use client"
 import { useEffect } from "react";
+import { useRouter } from "next/navigation"
 
-const NotFound = () => {
+export default function NotFound() {
     const router = useRouter();
 
     useEffect(() => {
         router.push("/shop")
-    }, [router])
+    })
 }
-
-export default NotFound;

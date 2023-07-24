@@ -1,10 +1,10 @@
 import { ShopItemRating } from "../entities/ShopItem";
 
-import Image from "next/image";
-
 import starLogo from "../assets/estrella.svg"
 
 import style from "./RatingComponent.module.sass"
+
+import Image from "next/image";
 
 type RatingComponentProps = {
     rating: ShopItemRating,
@@ -16,7 +16,7 @@ const RatingComponent = ({rating, className}: RatingComponentProps) => {
         <div className={`${className} ${style.parent}`}>
             {
                 [...Array(Math.round(rating.rate))].map((_, i) => 
-                    <Image src={starLogo} key={i} height={20} alt="Star Icon"/>
+                    <Image alt="Star" src={starLogo} key={i} height={20}/>
                 )
             }
             <label>{rating.count}</label>

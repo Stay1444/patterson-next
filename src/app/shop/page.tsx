@@ -1,10 +1,11 @@
+'use client'
 import { useFetch } from "usehooks-ts";
-import { ShopItem } from "../entities/ShopItem";
-import ShopItemComponent from "../components/ShopItemComponent";
+import { ShopItem } from "../../entities/ShopItem";
+import ShopItemComponent from "../../components/ShopItemComponent";
 
-import style from "./shop.module.sass";
+import style from "./page.module.sass";
 
-const ShopPage = () => {
+export default function ShopPage() {
     const { data, error } = useFetch<ShopItem[]>(`https://fakestoreapi.com/products`);
 
     if (error) {
@@ -30,5 +31,3 @@ const ShopPage = () => {
         </div>
     )
 }
-
-export default ShopPage;
