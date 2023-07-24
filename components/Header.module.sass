@@ -1,0 +1,57 @@
+.parent
+    display: flex
+
+    flex-direction: row
+    align-items: center
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+
+    padding: 20px
+
+.cartParent
+    margin-left: auto
+    margin-right: 50px
+
+    transition-property: transform
+    transition-duration: 150ms
+
+    cursor: pointer
+
+    &:hover
+        transform: scale(1.1)
+
+    *
+        cursor: pointer
+
+    .cartCount
+        position: absolute
+        transform: translate(25px, -20px)
+
+        width: 30px
+        height: 30px
+
+        background: #f23b3b
+        
+        border-radius: 50%
+
+        display: flex
+        justify-content: center
+        align-items: center
+
+        & > label
+            font-size: 1.3em
+            color: white
+
+
+.link
+    font-size: 1.5em
+
+    margin-left: 50px
+    cursor: pointer
+    &:hover
+        text-decoration: underline
+    
+    text-decoration: none
+
+    &:active, &:visited
+        color: black

@@ -1,0 +1,37 @@
+.parent
+    display: flex
+    flex-direction: row
+    overflow: hidden
+
+    background: white
+    min-height: 200px
+    max-height: 200px
+    padding: 15px
+    border-radius: 5px
+.leftColumn
+    > img
+        max-height: 125px
+        max-width: 125px
+
+    min-width: 150px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    row-gap: 10px
+
+.rightColumn
+    .title
+        font-size: 1.6em
+.removeButton
+    margin-left: auto
+    svg
+        width: 30px
+        height: 30px
+        cursor: pointer
+        
+        transition-property: color
+        transition-duration: 100ms
+
+        &:hover
+            color: #f83f3f

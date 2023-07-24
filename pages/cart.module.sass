@@ -1,0 +1,72 @@
+.parent
+    display: flex
+    flex-direction: row
+    max-height: 100vh
+    height: 100%
+
+.sidebar
+    height: 100vh
+    width: 380px
+    background-color: white
+    flex-shrink: 0
+
+    display: flex
+    flex-direction: column
+    align-content: center
+    align-items: center
+    padding: 25px
+    row-gap: 15px
+    .group
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+        width: 300px
+        font-size: 1.2em
+
+.items
+    width: 100%
+    max-height: 100vh
+    overflow: auto
+    display: flex
+    flex-direction: column
+    row-gap: 15px
+    padding: 50px
+
+.empty
+    height: 100%
+    
+    display: flex
+    justify-content: center
+    align-content: center
+    align-items: center
+
+
+.discountListing
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-content: center
+    align-items: center
+
+    .discountRemoveButton
+        display: flex
+        align-content: center
+        align-items: center
+    
+        cursor: pointer
+        &:hover
+            color: red
+    
+.discountCodeInput
+    outline: none
+    border: none
+    font-size: 1em
+    border-bottom: 2px black solid
+
+.discountAddButton
+    cursor: pointer
+    transition-property: transform
+    transition-duration: 200ms
+
+    &:hover
+        transform: scale(1.2)

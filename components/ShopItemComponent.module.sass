@@ -1,0 +1,102 @@
+.parent
+    width: 270px
+    height: 325px
+
+    transition-property: transform
+    transition-duration: 150ms
+
+    &:hover
+        transform: scale(1.05)
+    
+    position: relative
+
+.action
+    display: none
+    opacity: 0
+
+    .actionIcon
+        cursor: pointer
+        border-radius: 35px
+        width: 100px
+        height: 100px
+        background: white
+        display: flex
+        justify-content: center
+        align-content: center
+        align-items: center
+        transition-duration: 200ms
+        transition-property: transform
+
+        &:hover
+            transform: scale(1.15)
+.parent:hover .action
+    display: inline
+    opacity: 1
+    position: absolute
+    backdrop-filter: blur(10px)
+    width: 280px
+    height: 350px
+    
+    transform: translate(0, -350px)
+
+    display: flex
+    justify-content: center
+    align-items: center
+    align-content: center
+    & svg
+        width: 35px
+        height: 35px
+        transition-property: transform
+        transition-duration: 250ms
+
+.actionRemove
+    & svg
+        color: #ff4747
+.actionAdd
+    & svg
+        color: black
+
+.box
+    background: white
+    display: flex
+    flex-direction: column
+
+    width: 250px
+    height: 300px
+
+    padding: 15px
+    margin-bottom: 15px
+
+    border-radius: 5px
+
+.title
+    font-size: 1.3em
+    text-align: center
+    width: 280px
+    display: inline-block
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.image
+    max-width: 200px
+    max-height: 200px
+    align-self: center
+    margin-top: auto
+    margin-bottom: auto
+
+.rating
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-content: center
+    align-items: center
+
+.cartIcon
+    padding-right: 10px
+
+.addedLabel
+    text-align: center
+    font-size: 1.4em
+    color: red
+    font-weight: 600
