@@ -3,8 +3,6 @@ import { useFetch } from "usehooks-ts";
 import { ShopItem } from "../../entities/ShopItem";
 import ShopItemComponent from "../../components/ShopItemComponent";
 
-import { PuffLoader } from "react-spinners";
-
 import style from "./page.module.sass";
 
 export default function ShopPage() {
@@ -29,10 +27,12 @@ export default function ShopPage() {
 
     return (
         <div className={style.parent}>
-            <div className={style.shopItems}>
-                {data.map((v, i) => 
-                    <ShopItemComponent item={v} key={i} />
-                )}
+            <div className={style.shopWrapper}>
+                <div className={style.shopItems}>
+                    {data.map((v, i) => 
+                        <ShopItemComponent item={v} key={i} />
+                    )}
+                </div>
             </div>
         </div>
     )
