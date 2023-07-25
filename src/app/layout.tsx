@@ -8,6 +8,8 @@ import style from './layout.module.sass'
 import Header from '@/components/Header'
 import { CartContextProvider } from '@/context/CartContext'
 
+import './globals.css'
+
 export default function RootLayout({ children }: {
   children: React.ReactNode
 }) {
