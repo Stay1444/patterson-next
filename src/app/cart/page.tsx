@@ -8,25 +8,12 @@ import style from "./page.module.sass"
 
 import { FiPlus, FiX } from "react-icons/fi"
 
-class DiscountCode {
-    public code: string
-    public discount: number
-    
-    constructor(code: string, discount: number) {
-        this.code = code;
-        this.discount = discount;
-    }
-}
-
-const ValidDiscounts = [
-    new DiscountCode("DTO10", 0.1),
-    new DiscountCode("DTO50", 0.5)
-]
+import { Discount, ValidDiscounts } from "@/entities/Discount";
 
 export default function CartPage() {
     const cartContext = useContext(CartContext);
     
-    const [discountCodes, setDiscountCodes] = useState<DiscountCode[]>([])
+    const [discountCodes, setDiscountCodes] = useState<Discount[]>([])
 
     const [codeInputValue, setCodeInputValue] = useState("");
 
@@ -44,7 +31,7 @@ export default function CartPage() {
         let price = calculateItemPrice();
 
         discountCodes.forEach(x => {
-            price -= x.discount * price;
+            price -= x.value * price;
         })
 
         return price;
@@ -84,7 +71,7 @@ export default function CartPage() {
                             </div>
                             <label><b>{x.code}</b></label>
                         </div>
-                        <label>-{x.discount * 100}%</label>
+                        <label>-{x.value * 100}%</label>
                     </div>
                     )
                 }
