@@ -1,8 +1,8 @@
 "use client"
 import { useContext, useState } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "@/context/CartContext";
 
-import CartItemComponent from "../../components/CartItemComponent";
+import CartItemComponent from "@/components/CartItemComponent";
 
 import style from "./page.module.sass"
 

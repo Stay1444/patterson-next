@@ -1,7 +1,7 @@
 'use client'
 import { useFetch } from "usehooks-ts";
-import { ShopItem } from "../../entities/ShopItem";
-import ShopItemComponent from "../../components/ShopItemComponent";
+import { ShopItem } from "@/entities/ShopItem";
+import ShopItemComponent from "@/components/ShopItemComponent";
 
 import style from "./page.module.sass";
 
