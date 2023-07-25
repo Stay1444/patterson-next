@@ -3,6 +3,8 @@ import { useFetch } from "usehooks-ts";
 import { ShopItem } from "../../entities/ShopItem";
 import ShopItemComponent from "../../components/ShopItemComponent";
 
+import { PuffLoader } from "react-spinners";
+
 import style from "./page.module.sass";
 
 export default function ShopPage() {
@@ -18,7 +20,11 @@ export default function ShopPage() {
     }
 
     if (!data) {
-        return (<></>)
+        return (
+            <>
+                <label>Loading Please Wait...</label>
+            </>
+        )
     }
 
     return (
