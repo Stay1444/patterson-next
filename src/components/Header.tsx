@@ -29,6 +29,16 @@ const CartIcon = () => {
     const cartContext = useContext(CartContext);
     const router = useRouter();
 
+    function calculateAmount() {
+        let result = 0;
+
+        cartContext.items.forEach(x => {
+            result += x.price;
+        })
+
+        return result;
+    }
+
     return (
         <div className={style.cartParent} onClick={() => {
             router.push("/cart")
@@ -37,9 +47,14 @@ const CartIcon = () => {
             {
                 !cartContext.isEmpty() &&
                 <div className={style.cartCount}>
-                    <label>{cartContext.items.length}</label>
+                    <label>{Math.min(cartContext.items.length, 99)}</label>
                 </div>
             }
+
+            <div className={style.cartLabelGroup}>
+                <label>My Cart</label>
+                <label className={style.amount}>{calculateAmount().toFixed(2)}€</label>
+            </div>
         </div>
     )
 }

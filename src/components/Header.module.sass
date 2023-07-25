@@ -11,6 +11,12 @@
 .cartParent
     margin-left: auto
     margin-right: 50px
+    
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-content: center
+    align-items: center
 
     transition-property: transform
     transition-duration: 150ms
@@ -25,10 +31,10 @@
 
     .cartCount
         position: absolute
-        transform: translate(25px, -20px)
+        transform: translate(-50px, 16px)
 
-        width: 30px
-        height: 30px
+        width: 22px
+        height: 22px
 
         background: #f23b3b
         
@@ -39,10 +45,18 @@
         align-items: center
 
         & > label
-            font-size: 1.3em
+            font-size: 1em
             color: white
-
-
+    .cartLabelGroup
+        display: flex
+        flex-direction: column
+        align-content: center
+        justify-content: center
+        padding: 10px
+    
+        .amount
+            font-size: 0.9em
+            color: gray
 .link
     font-size: 1.5em
 
