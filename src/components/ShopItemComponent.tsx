@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { CartContext } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 import { ShopItem } from "../entities/ShopItem";
 import RatingComponent from "./RatingComponent";
 
@@ -12,9 +11,9 @@ type ShopItemComponentProps = {
 }
 
 const ShopItemComponent = ({item}: ShopItemComponentProps) => {
-  const cartContext = useContext(CartContext);
+  const cart = useCart();
 
-  const isAdded = cartContext.hasItem(item);
+  const isAdded = cart.hasItem(item);
 
   return (
     <div className={style.parent}>
@@ -31,9 +30,9 @@ const ShopItemComponent = ({item}: ShopItemComponentProps) => {
       <div className={`${style.action} ${isAdded ? style.actionRemove : style.actionAdd}`}>
         <div className={style.actionIcon} onClick={() => {
             if (isAdded) {
-              cartContext.removeItem(item)
+              cart.removeItem(item)
             } else {
-              cartContext.addItem(item)
+              cart.addItem(item)
             }
           }}>
           {

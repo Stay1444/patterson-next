@@ -5,8 +5,7 @@ import style from "./Header.module.sass"
 import pattersonLogo from "../assets/patterson-agency-logo.png"
 import cartLogo from "../assets/carrito.svg"
 
-import { useContext } from "react"
-import { CartContext } from "../context/CartContext"
+import {  useCart } from "../context/CartContext"
 
 import Link from "next/link"
 
@@ -26,13 +25,13 @@ const Header = () => {
 }
 
 const CartIcon = () => {
-    const cartContext = useContext(CartContext);
+    const cart = useCart();
     const router = useRouter();
 
     function calculateAmount() {
         let result = 0;
 
-        cartContext.items.forEach(x => {
+        cart.items.forEach(x => {
             result += x.price;
         })
 
@@ -45,9 +44,9 @@ const CartIcon = () => {
         }}>
             <Image alt="Cart Logo" src={cartLogo} height={40}/>
             {
-                !cartContext.isEmpty() &&
+                !cart.isEmpty() &&
                 <div className={style.cartCount}>
-                    <label>{Math.min(cartContext.items.length, 99)}</label>
+                    <label>{Math.min(cart.items.length, 99)}</label>
                 </div>
             }
 

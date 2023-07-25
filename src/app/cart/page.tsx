@@ -1,6 +1,6 @@
 "use client"
-import { useContext, useState } from "react";
-import { CartContext } from "@/context/CartContext";
+import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
 import CartItemComponent from "@/components/CartItemComponent";
 
@@ -11,7 +11,7 @@ import { FiPlus, FiX } from "react-icons/fi"
 import { Discount, ValidDiscounts } from "@/entities/Discount";
 
 export default function CartPage() {
-    const cartContext = useContext(CartContext);
+    const cart = useCart();
     
     const [discountCodes, setDiscountCodes] = useState<Discount[]>([])
 
@@ -20,7 +20,7 @@ export default function CartPage() {
     const calculateItemPrice = () => {
         let price = 0;
 
-        cartContext.items.forEach(i => {
+        cart.items.forEach(i => {
             price += i.price;
         })
 
@@ -41,13 +41,13 @@ export default function CartPage() {
         <div className={style.parent}>
             <div className={style.items}>
                 {
-                    cartContext.isEmpty() &&
+                    cart.isEmpty() &&
                     <div className={style.empty}>
                         <label>Empty</label>
                     </div>
                 }
                 {
-                    cartContext.items.map((v, i) => 
+                    cart.items.map((v, i) => 
                         <CartItemComponent item={v} key={i}/>
                     )
                 }
@@ -56,7 +56,7 @@ export default function CartPage() {
             <div className={style.sidebar}>
                 <h1>Cart</h1>
                 <div className={style.group}>
-                    <label><b>{cartContext.items.length}</b> Items</label>
+                    <label><b>{cart.items.length}</b> Items</label>
                     <label>{calculateItemPrice().toFixed(2)}€</label>
                 </div>
                 

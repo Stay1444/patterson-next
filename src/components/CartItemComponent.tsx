@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { CartContext } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 import { ShopItem } from "../entities/ShopItem";
 import RatingComponent from "./RatingComponent";
 
@@ -12,7 +11,7 @@ type CartItemComponentProps = {
 }
 
 const CartItemComponent = ({item}: CartItemComponentProps) => {
-    const cartContext = useContext(CartContext);
+    const cart = useCart();
 
     return (
         <div className={style.parent}>
@@ -26,7 +25,7 @@ const CartItemComponent = ({item}: CartItemComponentProps) => {
                 <p>{item.description}</p>
             </div>
             <div className={style.removeButton} onClick={() => {
-                cartContext.removeItem(item)
+                cart.removeItem(item)
             }}>
                 <FiX/>
             </div>

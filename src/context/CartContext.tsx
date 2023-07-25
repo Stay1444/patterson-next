@@ -1,6 +1,6 @@
 'use client'
 
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useContext } from "react";
 
 import { ShopItem } from "../entities/ShopItem";
 import { useLocalStorage } from "usehooks-ts";
@@ -55,4 +55,8 @@ export const CartContextProvider = (props: CartContextProviderWithProps) => {
             {props.children}
         </CartContext.Provider>
     )
+}
+
+export function useCart() {
+    return useContext(CartContext);
 }
